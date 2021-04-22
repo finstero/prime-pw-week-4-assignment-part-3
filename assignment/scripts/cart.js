@@ -74,10 +74,27 @@ console.log('cannot add. should be false and undefined', addItem2('babka', baske
 
 console.log('--- Using array built in functions ---');
 
-function removeItem(item, array){
-
-
+function removeItem (item, array){
+  let index = array.indexOf(item);
+  if (index == -1){
+    console.log(item, 'is not in array');
+    return 'null';
+  }
+  else {
+    array.splice(index, 1);
+    console.log(item, 'has been removed!');
+    return item;
+  }
 }
+
+console.log(basket);
+console.log('should be -1', basket.indexOf('jam'));
+console.log('should be null:', removeItem('jam', basket));
+
+console.log('should say oatly and array should not include oatly:', removeItem('oatly', basket), basket);
+
+
+
 
 
 //extra lines
